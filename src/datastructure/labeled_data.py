@@ -48,7 +48,7 @@ def parse_labeled_data(data: list[str]) -> LabeledData:
     # Poker Hand #RCdddddddddd: Hold'em No Limit ($0.01/$0.02) - 2024/10/06 15:45:23
     first_line = data[0].split(" ")
     data.pop(0)
-    time: datetime = datetime.strptime(first_line[-2] + " " + first_line[-1][:-1], "%Y/%m/%d %H:%M:%S")
+    time: datetime = datetime.strptime(first_line[-2] + " " + first_line[-1], "%Y/%m/%d %H:%M:%S")
     hash: str = first_line[2]
 
     # second line parse, following example

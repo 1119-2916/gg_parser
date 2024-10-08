@@ -1,6 +1,7 @@
-def parse_from_file(path: str) -> list:
+def parse_from_file(path: str, debug=False) -> list:
     # read raw data
-    print(path)
+    if debug:
+        print("read from" + path)
     with open(path, "r") as f:
         raw_data = f.readlines()
 
@@ -18,6 +19,7 @@ def parse_from_file(path: str) -> list:
     if len(dataset) > 0:
         datasets.append(dataset)
 
-    print(len(datasets))
+    if debug:
+        print("read " + str(len(datasets)) + " datasets")
 
     return datasets
